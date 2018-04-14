@@ -32,10 +32,15 @@ class Unit(UnitBase):
 
 class Barracks(object):
     def __init__(self):
-        self.units = {
-            "Knight": {1:Unit('knight', 1), 2:Unit('knight', 2)},
-            "Archer": {1:Unit('archer', 1), 2:Unit('archer', 2)}
-        }
+        from os import listdir
+
+        v_files = listdir('ch3_parms')
+        self.units = {}
+        for v_file in v_files:
+            v_file_parts = v_file.split('_')
+            v_unit_type = v_file_parts[0].capitalize()
+            v_level = int(v_file_parts[1])
+            self.units[v_unit_type][v_level] = Unit(v_unit_type, v_level)
 
     def build_unit(self, p_unit_type, p_level):
         v_unit_type =  p_unit_type.capitalize()
