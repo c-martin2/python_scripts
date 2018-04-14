@@ -38,7 +38,7 @@ class Barracks(object):
         }
 
     def build_unit(self, p_unit_type, p_level):
-        if not p_unit_type in self.units:
+        if not p_unit_type.capitalize() in self.units:
             raise AssertionError('Invalid unit type: ' + p_unit_type)
         if not p_level in self.units[p_unit_type]:
             raise AssertionError('Invalid level for ' + p_unit_type + ': ' + str(p_level))
