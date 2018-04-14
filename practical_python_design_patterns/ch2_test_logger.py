@@ -1,4 +1,4 @@
-from ch2_logger import __Logger
+from ch2_logger import Logger
 
 v_log = Logger('test.log')
 
