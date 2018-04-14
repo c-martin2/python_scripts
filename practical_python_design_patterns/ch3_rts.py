@@ -39,5 +39,5 @@ if __name__ == '__main__':
     v_barracks = Barracks()
     v_k1 = v_barracks.build_unit('knight',1)
     v_a1 = v_barracks.build_unit('archer',2)
-    print('[knight1] ' + v_k1)
-    print('[archer1] ' + v_a1)
+    print('[knight1] ' + str(v_k1))
+    print('[archer1] ' + str(v_a1))
