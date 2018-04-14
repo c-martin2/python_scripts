@@ -5,7 +5,7 @@ class Unit(UnitBase):
     def __init__(self, p_unit_type, p_level):
         self.unit_type = p_unit_type.capitalize()
 
-        with open(self.unit_type.lower() + '_' + p_level) as v_parm_file:
+        with open(self.unit_type.lower() + '_' + str(p_level) as v_parm_file:
             v_lines = v_parm_file.read().split('\n')
             self.life = v_lines[0]
             self.speed = v_lines[1]
