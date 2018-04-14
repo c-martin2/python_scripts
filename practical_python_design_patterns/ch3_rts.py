@@ -38,11 +38,12 @@ class Barracks(object):
         }
 
     def build_unit(self, p_unit_type, p_level):
-        if not p_unit_type.capitalize() in self.units:
+        v_unit_type =  p_unit_type.capitalize()
+        if not v_unit_type in self.units:
             raise AssertionError('Invalid unit type: ' + p_unit_type)
-        if not p_level in self.units[p_unit_type]:
+        if not p_level in self.units[v_unit_type]:
             raise AssertionError('Invalid level for ' + p_unit_type + ': ' + str(p_level))
-        return self.units[p_unit_type.capitalize()][p_level].clone()
+        return self.units[v_unit_type][p_level].clone()
 
 if __name__ == '__main__':
     v_barracks = Barracks()
