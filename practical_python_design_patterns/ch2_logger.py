@@ -1,7 +1,7 @@
 class Logger(object):
     class __Logger():
         def __init__(self, p_file_name):
-            self.file_name = file_name
+            self.file_name = p_file_name
 
         def __str__(self):
             return "{0!r} {1}".format(self, self.file_name)
