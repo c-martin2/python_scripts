@@ -40,10 +40,9 @@ class Barracks(object):
             v_file_parts = v_file.split('_')
             v_unit_type = v_file_parts[0].capitalize()
             v_level = int(v_file_parts[1])
-            self.units.update({v_unit_type: {v_level:Unit(v_unit_type, v_level)}})
-
-        for i in self.units:
-            print(i)
+            if not v_unit_type in self.units:
+                self.units[v_unit_type] = {}
+            self.units[v_unit_type][v_level] = Unit(v_unit_type, v_level)
 
     def build_unit(self, p_unit_type, p_level):
         v_unit_type =  p_unit_type.capitalize()
